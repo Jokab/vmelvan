@@ -17,10 +17,12 @@ def collect_stats(name, url):
     parsed_html = BeautifulSoup(res.content, "html.parser")
     growth = parsed_html.body.findAll('tr', attrs={'growth': True})
 
+    total_round_tr2 = parsed_html.find("div", id="growth")
+
     growths = [int(x["growth"]) for x in growth if x != "0"]
     filtered = [x for x in growths if x != 0]
 
-    teams[name]["average"] = functools.reduce(lambda a, b: a+b, filtered) / len(filtered)
+    teams[name]["average"] = int(unicodedata.normalize("NFKD", "".join(total_round_tr2.findAll("h3")[0].text.split()))) / len(filtered)
 
     turn_summary = parsed_html.find("div", id="turn-summary")
     total_tr = turn_summary.find_next("tr", attrs={"class": "total"})
