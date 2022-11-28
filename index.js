@@ -23,9 +23,13 @@ async function main() {
         avgCell.innerHTML = Math.round(Number.parseFloat(stats.average)).toLocaleString("sv-SE");
         avgCell.classList.add("align-right");
 
-        const totalCell = row.insertCell(2);
-        totalCell.innerHTML = Math.round(Number.parseFloat(stats.total_round)).toLocaleString("sv-SE");
-        totalCell.classList.add("align-right");
+        const totalRound = row.insertCell(2);
+        totalRound.innerHTML = Math.round(Number.parseFloat(stats.total_round)).toLocaleString("sv-SE");
+        totalRound.classList.add("align-right");
+
+        const total = row.insertCell(3);
+        total.innerHTML = Math.round(Number.parseFloat(stats.total)).toLocaleString("sv-SE");
+        total.classList.add("align-right");
     });
 }
 
