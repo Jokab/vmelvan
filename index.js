@@ -20,7 +20,7 @@ async function main() {
         nameCell.innerHTML = name;
 
         const avgCell = row.insertCell(1);
-        avgCell.innerHTML = Math.round(Number.parseFloat(stats.average)).toLocaleString("sv-SE");
+        avgCell.innerHTML = Math.round(Number.parseFloat(stats.average)).toLocaleString("sv-SE") + " (" + stats.players_left + " kvar)";
         avgCell.classList.add("align-right");
 
         const totalRound = row.insertCell(2);
