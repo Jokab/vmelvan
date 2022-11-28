@@ -11,13 +11,12 @@ html {
 
 body {
     width: 21.75rem;
-    display:flex; 
+    display: flex; 
     flex-direction:column;
     justify-content:center;
-    max-height:100vh;
+    //max-height:100vh;
     margin: 0 auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 1rem;
 }
 
 tr {
