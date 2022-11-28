@@ -1,0 +1,36 @@
+table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    width: 21.75rem;
+    display:flex; 
+    flex-direction:column;
+    justify-content:center;
+    max-height:100vh;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+tr {
+    border-bottom: 1pt solid black;
+}
+
+.align-right {
+    text-align: right;
+}
+
+th {
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+td {
+    font-size: 0.8rem;
+}
