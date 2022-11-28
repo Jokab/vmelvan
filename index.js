@@ -3,7 +3,13 @@
 
 
 async function main() {
+    const loading = document.createElement("div");
+    loading.innerHTML = "Laddar...";
+    loading.id = "loading";
+    document.body.appendChild(loading)
     const fetchResponse = await fetch("https://5coh2fljzk.execute-api.eu-west-1.amazonaws.com/stats");
+    //document.getElementById("loading");
+    loading.remove();
     const teams = await fetchResponse.json();
     const tbody = document.getElementById("body")
 
