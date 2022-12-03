@@ -22,7 +22,7 @@ def collect_stats(name, url):
     growths = [int(x["growth"]) for x in growth if x != "0"]
     filtered = [x for x in growths if x != 0]
 
-    teams[name]["average"] = int(unicodedata.normalize("NFKD", "".join(total_round_tr2.findAll("h3")[0].text.split()))) / len(filtered)
+    teams[name]["average"] = int(unicodedata.normalize("NFKD", "".join(total_round_tr2.findAll("h3")[0].text.split()))) / len(filtered) if len(filtered) > 0 else 0
 
     turn_summary = parsed_html.find("div", id="turn-summary")
     total_tr = turn_summary.find_next("tr", attrs={"class": "total"})
